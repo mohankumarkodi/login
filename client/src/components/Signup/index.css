@@ -1,39 +1,63 @@
 .s-input2{
-    width:500px;
+    width:300px;
     height: 40px;
     border: solid 1px grey;
+    border: none;
+    border-radius: 5px;
 }
 
 .s-disc{
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'roboto';
+    color: #ffffff;
 
 }
 
 .s-align-name{
     display: flex;
     flex-direction: column;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
-    min-width: 100%;
-}
+    min-width: 50%;
+    height: 70vh;
+    background-color:#f2846b;
+    border-radius: 25px;
+    margin-left: 20%;
+    
+    
 
+}
+.align-left{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    background-color: rgb(246, 220, 204);
+}
 .s-btn-align{
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
 }
-
+.align-middle{
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+}
 .s-btn{
     margin: 20px 0 0 0;
     width: 180px;
     height: 40px;
-    background-color: #351ae8;
+    background-color:#ffffff;
     border-radius: 5px;
     border-width: 0px;
     border-style: solid;
-    color: white;
+    color:#F47458;
     font-size: 20px;
     font-weight: 700;
 }
@@ -48,4 +72,23 @@
     color:black;
     font-family: 'roboto';
     font-size: 20px;
+}
+.s-welcome{
+    color: #493f3f;
+    font-size: 22px;
+    align-self: flex-start;
+    padding-left: 23%;
+    
+}
+.s-img{
+    min-width: 30%;
+    margin-left: 50px;
+    
+}
+
+.s-sign{
+    color: black;
+    font-size:32px;
+    align-self: flex-start;
+    padding-left: 23%;
 }

@@ -1,22 +1,36 @@
 .l-input2{
     width:500px;
-    height: 40px;
-    border: solid 1px grey;
+    height: 50px;
+    border: solid 1px #ffffff;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #ffffff;
+    padding-left: 30px;
+    font-size: 25px;
+    margin: 20px 0 10px 0;
 }
 
 .l-disc{
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'roboto';
-
+    color: #ffffff;
+}
+.l-align-middle{
+    display: flex;
+    background-color: #274FC7;
+    justify-self: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .l-align-name{
+    
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
     min-width: 100%;
-    height: 100vh;
+   
 }
 
 .l-btn-align{
@@ -28,24 +42,26 @@
 
 .l-btn{
     margin: 20px 0 0 0;
-    width: 180px;
-    height: 40px;
-    background-color: #351ae8;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
     border-radius: 5px;
     border-width: 0px;
     border-style: solid;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
+    color: #274FC7;
+    font-size: 25px;
+    font-weight: 400;
 }
 
 .l-error{
+
     color: red;
     font-family: 'roboto';
-    font-size: 15px;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
-.heading{
+.l-heading{
     color:black;
     font-family: 'roboto';
     font-size: 20px;
@@ -53,9 +69,12 @@
 
 .login-link {
     font-family: "Roboto";
-    font-size: 14px;
+    font-size: 20px;
+    color: #ffffff;
 }
 
 .login-link-style {
     text-decoration: none;
+    font-size: px;
+    color: #ffffff;
 }

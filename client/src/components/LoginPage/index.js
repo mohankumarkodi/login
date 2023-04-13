@@ -4,7 +4,6 @@ import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
 import Cookies from "js-cookie";
-
 import "./index.css";
 
 function LoginPage() {
@@ -51,52 +50,61 @@ function LoginPage() {
   }, [submitting, formik.values, formik]);
 
   return (
-    <div className="l-align-name">
-      <p className="heading">Login to your account</p>
-      <form onSubmit={formik.handleSubmit}>
-        <div>
+    <div className="l-align-middle">
+      <div className="l-align-name">
+        <img
+          src="https://res.cloudinary.com/dhghcct1x/image/upload/v1681363233/Group_mupabc.png"
+          alt="cart"
+          className="l-img-cart"
+        />
+        <form onSubmit={formik.handleSubmit}>
           <div>
-            <p className="l-disc">Username*</p>
-            <input
-              value={formik.values.username}
-              onChange={formik.handleChange}
-              name="username"
-              id="username"
-              className="l-input2"
-              type="text"
-            />
-            {formik.touched.username && formik.errors.username ? (
-              <div className="l-error">{formik.errors.username}</div>
-            ) : null}
+            <div>
+              <label htmlFor="username" className="l-disc">
+                USERNAME*
+              </label>
+              <br />
+              <input
+                {...formik.getFieldProps("username")}
+                className="l-input2"
+                type="text"
+                id="username"
+              />
+              {formik.touched.username && formik.errors.username ? (
+                <div className="l-error">{formik.errors.username}</div>
+              ) : null}
+            </div>
+            <div>
+              <label htmlFor="password" className="l-disc">
+                PASSWORD*
+              </label>
+              <br />
+              <input
+                {...formik.getFieldProps("password")}
+                className="l-input2"
+                type="password"
+                id="password"
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <div className="l-error">{formik.errors.password}</div>
+              ) : null}
+            </div>
           </div>
-          <div>
-            <p className="l-disc">password*</p>
-            <input
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              name="password"
-              id="password"
-              className="l-input2"
-              type="password"
-            />
-            {formik.touched.password && formik.errors.password ? (
-              <div className="l-error">{formik.errors.password}</div>
-            ) : null}
+          <div className="l-btn-align">
+            <button type="submit" className="l-btn">
+              LogIn
+            </button>
           </div>
-        </div>
-        <div className="l-btn-align">
-          <button type="submit" className="l-btn">
-            LogIn
-          </button>
-        </div>
-        {errorMsg && <p className="l-error">{errorMsg.data}</p>}
-      </form>
-      <p className="login-link">
-        New user?{" "}
-        <Link className="login-link-style" to="/signup">
-          Signup here
-        </Link>
-      </p>
+
+          {errorMsg && <p className="l-error">{errorMsg.data}</p>}
+        </form>
+        <p className="login-link">
+          New user?{" "}
+          <Link className="login-link-style" to="/signup">
+            Signup here
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
