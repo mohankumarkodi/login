@@ -1,13 +1,14 @@
 .l-input2{
     width:500px;
-    height: 50px;
+    border-width: 1px;
+    border-radius: 5px;
     border: solid 1px #ffffff;
-    border-radius: 8px;
-    background-color: transparent;
+    height: 50px;
     color: #ffffff;
     padding-left: 30px;
     font-size: 25px;
     margin: 20px 0 10px 0;
+    background-color: transparent;
 }
 
 .l-disc{
@@ -17,10 +18,11 @@
 }
 .l-align-middle{
     display: flex;
-    background-color: #274FC7;
+    background-image: url("https://t3.ftcdn.net/jpg/01/17/33/22/360_F_117332203_ekwDZkViF6M3itApEFRIH4844XjJ7zEb.jpg");
     justify-self: center;
     align-items: center;
     height: 100vh;
+    background-size: cover;
 }
 
 .l-align-name{
@@ -48,10 +50,11 @@
     border-radius: 5px;
     border-width: 0px;
     border-style: solid;
-    color: #274FC7;
+    color: black;
     font-size: 25px;
     font-weight: 400;
 }
+
 
 .l-error{
 
@@ -76,5 +79,29 @@
 .login-link-style {
     text-decoration: none;
     font-size: px;
+    color: #ffffff;
+}
+.l-password-symbol{
+    border:none;
+    outline: none;
+}
+.l-container-visable{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-style:solid ;
+    border-width: 1px;
+    border-radius: 5px;
+    border: solid 1px #ffffff;
+    border-radius: 8px;
+    max-width: 530px;
+    max-height: 55px;
+}
+.l-eye-button{
+    border:none;
+    outline: none;
+    background-color: transparent;
+    font-size: 30px;
     color: #ffffff;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
@@ -7,6 +8,7 @@ import Cookies from "js-cookie";
 import "./index.css";
 
 function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
   const [submitting, setSubmitting] = useState(false);
@@ -29,6 +31,9 @@ function LoginPage() {
         .required("Required*"),
     }),
   });
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   useEffect(() => {
     if (submitting) {
@@ -78,13 +83,24 @@ function LoginPage() {
               <label htmlFor="password" className="l-disc">
                 PASSWORD*
               </label>
-              <br />
-              <input
-                {...formik.getFieldProps("password")}
-                className="l-input2"
-                type="password"
-                id="password"
-              />
+              <div className="l-container-visable">
+                <input
+                  {...formik.getFieldProps("password")}
+                  className="l-input2 l-password-symbol"
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                />
+                <span>
+                  <button
+                    type="button"
+                    className="l-eye-button l-password-symbol"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </span>
+              </div>
+
               {formik.touched.password && formik.errors.password ? (
                 <div className="l-error">{formik.errors.password}</div>
               ) : null}

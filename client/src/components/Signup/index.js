@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
@@ -8,6 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 function SignUp() {
   const [errorMsg, setErrorMsg] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -34,6 +36,9 @@ function SignUp() {
         .required("Required*"),
     }),
   });
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   useEffect(() => {
     if (submitting) {
@@ -71,10 +76,11 @@ function SignUp() {
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div>
-                <p className="s-disc">Username*</p>
+                <label className="s-disc">USERNAME*</label>
+                <br />
                 <input
                   {...formik.getFieldProps("username")}
-                  className="s-input2"
+                  className="s-input2 s-password-top"
                   type="text"
                 />
                 {formik.touched.username && formik.errors.username ? (
@@ -82,16 +88,29 @@ function SignUp() {
                 ) : null}
               </div>
               <div>
-                <p className="s-disc">password*</p>
-                <input
-                  {...formik.getFieldProps("password")}
-                  className="s-input2"
-                  type="password"
-                />
+                <label className="s-disc ">PASSWORD*</label>
+                <div className="s-container-visable">
+                  <br />
+                  <input
+                    {...formik.getFieldProps("password")}
+                    className="s-input2 s-password-symbol "
+                    type={showPassword ? "text" : "password"}
+                  />
+                  <span>
+                    <button
+                      type="button"
+                      className="s-eye-button l-password-symbol"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </button>
+                  </span>
+                </div>
                 {formik.touched.password && formik.errors.password ? (
                   <div className="s-error">{formik.errors.password}</div>
                 ) : null}
               </div>
+              <div></div>
             </div>
             <div className="s-btn-align">
               <button type="submit" className="s-btn">

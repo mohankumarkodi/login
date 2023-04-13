@@ -4,6 +4,7 @@
     border: solid 1px grey;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 .s-disc{
@@ -85,10 +86,38 @@
     margin-left: 50px;
     
 }
+.s-password-top{
+    margin:10px 0 20px 0;
+}
 
 .s-sign{
     color: black;
     font-size:32px;
     align-self: flex-start;
     padding-left: 23%;
+}
+.s-password-symbol{
+    border:none;
+    outline: none;
+}
+.s-container-visable{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-style:solid ;
+    border-width: 1px;
+    border-radius: 5px;
+    border: solid 1px #ffffff;
+    border-radius: 8px;
+    max-width: 87%;
+    background-color: white;
+    max-height: 55px;
+}
+.s-eye-button{
+    border:none;
+    outline: none;
+    background-color:transparent;
+    font-size: 25px;
+    color:grey;
 }
